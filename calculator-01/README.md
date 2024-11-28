@@ -19,8 +19,8 @@
 3.  **Run the program**:
     *   After compiling, run the program using the following command:
         
-        `./calculator # on Linux/Mac 
-        calculator.exe # on Windows`
+        `./calculator # on Linux/Mac`
+        `calculator.exe # on Windows`
         
 4.  **Use the calculator**:
     *   The program will display a menu where you can select the operation (Add, Subtract, Multiply, Divide).
