@@ -30,11 +30,11 @@ How to Run
 2.  **Open a terminal** and navigate to the directory containing the C source file.
 3.  **Compile the program** using a C compiler (e.g., GCC) by running the following command:
     
-        gcc program.c -o program
+        gcc decision-making.c -o decision-making
     
 4.  **Run the program** by executing the following command:
     
-        ./program
+        ./decision-making
     
 5.  The program will display a menu where you can select various options to practice decision-making and loops.
 
