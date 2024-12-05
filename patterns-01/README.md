@@ -65,26 +65,26 @@ Example Output
 
 Here’s an example of the output for some of the patterns:
 
-Pattern 1:
-1 
-1 2 
-1 2 3 
-1 2 3 4 
-1 2 3 4 5
+    Pattern 1:
+    1 
+    1 2 
+    1 2 3 
+    1 2 3 4 
+    1 2 3 4 5
 
-Pattern 2:
-1 2 3 4 5 
-1 2 3 4 
-1 2 3 
-1 2 
-1
+    Pattern 2:
+    1 2 3 4 5 
+    1 2 3 4 
+    1 2 3 
+    1 2 
+    1
 
-Pattern 5:
-\* 
-\* \* 
-\* \* \* 
-\* \* \* \* 
-\* \* \* \* \*
+    Pattern 5:
+    \* 
+    \* \* 
+    \* \* \* 
+    \* \* \* \* 
+    \* \* \* \* \*
     
 
 Contributing
