@@ -80,11 +80,11 @@ Here’s an example of the output for some of the patterns:
     1
 
     Pattern 5:
-    \* 
-    \* \* 
-    \* \* \* 
-    \* \* \* \* 
-    \* \* \* \* \*
+    * 
+    * * 
+    * * * 
+    * * * * 
+    * * * * *
     
 
 Contributing
