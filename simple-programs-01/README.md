@@ -28,7 +28,7 @@ How to Run
 
 1.  **Clone or Download the Repository:** Clone this repository to your local machine using the following command:
     
-    git clone https://github.com/sujanshresthanet/C-Programming-Tools.git
+    git clone https://github.com/sujanshresthanet/C-programming-examples.git
     
     Or download it as a ZIP and extract the files.
 2.  **Compile the C Program:** Navigate to the directory where the `simple-programs.c` file is located. Compile the program using the `gcc` compiler. Run the following command:
