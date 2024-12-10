@@ -1,66 +1,101 @@
-def celsius_to_fahrenheit(celsius):
-    return (celsius * 9/5) + 32
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-def fahrenheit_to_celsius(fahrenheit):
-    return (fahrenheit - 32) * 5/9
+float celsius_to_fahrenheit(float celsius) {
+    return (celsius * 9/5) + 32;
+}
 
-def celsius_to_kelvin(celsius):
-    return celsius + 273.15
+float fahrenheit_to_celsius(float fahrenheit) {
+    return (fahrenheit - 32) * 5/9;
+}
 
-def kelvin_to_celsius(kelvin):
-    return kelvin - 273.15
+float celsius_to_kelvin(float celsius) {
+    return celsius + 273.15;
+}
 
-def fahrenheit_to_kelvin(fahrenheit):
-    return (fahrenheit - 32) * 5/9 + 273.15
+float kelvin_to_celsius(float kelvin) {
+    return kelvin - 273.15;
+}
 
-def kelvin_to_fahrenheit(kelvin):
-    return (kelvin - 273.15) * 9/5 + 32
+float fahrenheit_to_kelvin(float fahrenheit) {
+    return (fahrenheit - 32) * 5/9 + 273.15;
+}
 
-def temperature_converter():
-    while True:
-        print("\nTemperature Converter")
-        print("1. Celsius to Fahrenheit")
-        print("2. Fahrenheit to Celsius")
-        print("3. Celsius to Kelvin")
-        print("4. Kelvin to Celsius")
-        print("5. Fahrenheit to Kelvin")
-        print("6. Kelvin to Fahrenheit")
+float kelvin_to_fahrenheit(float kelvin) {
+    return (kelvin - 273.15) * 9/5 + 32;
+}
 
-        try:
-            choice = int(input("Choose conversion option (1-6): "))
+int main() {
+    int choice;
+    float value, result;
+    char again[4];
 
-            if choice not in range(1, 7):
-                print("Invalid choice. Please select a valid option.")
-                continue
+    do {
+        printf("\nTemperature Converter\n");
+        printf("1. Celsius to Fahrenheit\n");
+        printf("2. Fahrenheit to Celsius\n");
+        printf("3. Celsius to Kelvin\n");
+        printf("4. Kelvin to Celsius\n");
+        printf("5. Fahrenheit to Kelvin\n");
+        printf("6. Kelvin to Fahrenheit\n");
 
-            value = float(input("Enter the temperature value: "))
+        printf("Choose conversion option (1-6): ");
+        if (scanf("%d", &choice) != 1) {
+            printf("Invalid input! Please enter a valid number.\n");
+            // Consume invalid input
+            while(getchar() != '\n');
+            continue;
+        }
 
-            if choice == 1:
-                result = celsius_to_fahrenheit(value)
-                print(f"{value} °C is {result:.2f} °F")
-            elif choice == 2:
-                result = fahrenheit_to_celsius(value)
-                print(f"{value} °F is {result:.2f} °C")
-            elif choice == 3:
-                result = celsius_to_kelvin(value)
-                print(f"{value} °C is {result:.2f} K")
-            elif choice == 4:
-                result = kelvin_to_celsius(value)
-                print(f"{value} K is {result:.2f} °C")
-            elif choice == 5:
-                result = fahrenheit_to_kelvin(value)
-                print(f"{value} °F is {result:.2f} K")
-            elif choice == 6:
-                result = kelvin_to_fahrenheit(value)
-                print(f"{value} K is {result:.2f} °F")
+        if (choice < 1 || choice > 6) {
+            printf("Invalid choice. Please select a valid option.\n");
+            continue;
+        }
 
-            again = input("\nDo you want to convert another temperature? (yes/no): ").strip().lower()
-            if again != 'yes':
-                print("Thank you for using the Temperature Converter!")
-                break
-        except ValueError:
-            print("Invalid input! Please enter a valid number.")
-            continue
+        printf("Enter the temperature value: ");
+        if (scanf("%f", &value) != 1) {
+            printf("Invalid input! Please enter a valid temperature value.\n");
+            // Consume invalid input
+            while(getchar() != '\n');
+            continue;
+        }
 
-# Run the temperature converter
-temperature_converter()
+        switch (choice) {
+            case 1:
+                result = celsius_to_fahrenheit(value);
+                printf("%.2f °C is %.2f °F\n", value, result);
+                break;
+            case 2:
+                result = fahrenheit_to_celsius(value);
+                printf("%.2f °F is %.2f °C\n", value, result);
+                break;
+            case 3:
+                result = celsius_to_kelvin(value);
+                printf("%.2f °C is %.2f K\n", value, result);
+                break;
+            case 4:
+                result = kelvin_to_celsius(value);
+                printf("%.2f K is %.2f °C\n", value, result);
+                break;
+            case 5:
+                result = fahrenheit_to_kelvin(value);
+                printf("%.2f °F is %.2f K\n", value, result);
+                break;
+            case 6:
+                result = kelvin_to_fahrenheit(value);
+                printf("%.2f K is %.2f °F\n", value, result);
+                break;
+            default:
+                printf("Invalid choice!\n");
+                continue;
+        }
+
+        printf("\nDo you want to convert another temperature? (yes/no): ");
+        scanf("%s", again);
+    } while (strcmp(again, "yes") == 0 || strcmp(again, "y") == 0);
+
+    printf("Thank you for using the Temperature Converter!\n");
+
+    return 0;
+}
